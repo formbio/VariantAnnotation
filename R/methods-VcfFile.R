@@ -18,7 +18,7 @@ VcfFile <-
         stop(sprintf("VcfFile: %s", conditionMessage(err)), call.=FALSE)
     })
     if (missing(index)){
-        index=paste(file, "tbi", sep=".")
+        index=paste(file, "csi", sep=".")
         if (!file.exists(index))
             index = NA
     }
@@ -60,7 +60,7 @@ setMethod("indexVcf", "VcfFile",
     index <- index(x)
     newDx = NA
     if (is.na(index) || length(index) == 0L){
-        index <- paste(path(x), "tbi", sep=".")
+        index <- paste(path(x), "csi", sep=".")
         newDx <- index
     }
     if (!file.exists(index))
